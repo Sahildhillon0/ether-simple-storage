@@ -8,6 +8,9 @@ async function main() {
     );
     const wallet = new ethers.Wallet(process.env.LOCAL_PRIVATE_KEY, provider);
 
+    //we can also use the different abi and binary as per the contract we want to deploy.
+    //as we have ExtraStorage and Storage contract in the same file, we can use the same abi and binary for both.
+
     const abi = fs.readFileSync("SimpleStorage_sol_SimpleStorage.abi", "utf8");
     const binary = fs.readFileSync(
         "SimpleStorage_sol_SimpleStorage.bin",
